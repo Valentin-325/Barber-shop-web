@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* START HEADER */
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background: #5c2c2c;
+}
+
+.logo h2{
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    /* padding: 0 15px; */
+}
+
+nav ul li {
+    padding: 0 20px;
+    /* border: 3px solid red; */
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(219, 144, 144);
+}
+
+.social {
+    display: flex;
+}
+
+.social i {
+    font-size: 18px;
+    /* border: 3px solid red; */
+}
+
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all .3s ease-in-out;
+    background-color: white;
+}
+
+/* END HEADER */
+
+/* Start HERO */
+
+.hero {
+    background-image: url(/images/hero-cutting.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(75, 75, 75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .6;
+}
+
+.hero-btn {
+    z-index: 999;
+    padding: 13px;
+    border-radius: 10px 0 10px 0;
+    border: 3px solid black;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: transform .2s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.hero-btn:hover {
+    border-radius: 0 10px 0 10px;
+    border: 3px solid white;
+    transform: scale(1.05);
+}
+
+/* END Hero */
+
+/* Start portofoliu */
+
+.portofoliu {
+    padding: 20px 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: #5c2c2c;
+    /* border: 2px solid black; */
+}
+
+
+#title-portofoliu {
+    margin: 10px;
+    padding: 20px 0;
+    color:  white;
+}
+
+.row-portofoliu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    /* border: 2px solid black; */
+}
+
+.col-portofoliu {
+    border: 3px solid white;
+    margin: 10px;
+    color: white;
+}
+
+.col-img img{
+    /* border-radius: 5px; */
+    width: 100%;
+}
+
+@media (max-width: 580px) { 
+    .header{
+        padding: 20px;
+    }
+
+    .portofoliu{
+        padding: 20px;
+    }
+
+    .row-portofoliu {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-menu.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);    
+    }
+    .hamburger-menu.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);    
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 65px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #5c2c2c;
+        width: 100%;        
+        text-align: center;
+        transition: .3s;
+        z-index: 999;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .programari {
+        padding: 20px;
+    }
+    .footer-row {
+        padding: 20px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-row-2 {
+        padding: 15px 0;
+    }
+
+    .footer-col {
+        padding-top: 20px;
+    }
+
+}
+
+@media (min-width: 576px) { 
+
+    .header{
+        padding: 20px;
+    }
+
+    .portofoliu{
+        padding: 20px;
+    }
+    .row-portofoliu {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .programari {
+        padding: 20px;
+    }
+
+    .footer-row {
+        padding: 20px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-row-2 {
+        padding: 15px 0;
+    }
+
+    .footer-col {
+        padding-top: 20px;
+    }
+}
+
+
+@media (min-width: 992px) { 
+    .header{
+        padding: 20px;
+    }
+
+    .portofoliu{
+        padding: 20px;
+    }
+    .row-portofoliu {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+
+    .programari {
+        padding: 20px;
+    }
+
+    .footer-row {
+        padding: 20px 100px;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+    }
+
+    .footer-row-2 {
+        padding: 15px 0;
+    }
+    
+ }
+
+@media (min-width: 1200px) { 
+    .header{
+        padding: 20px 100px;
+    }
+
+    .portofoliu{
+        padding: 20px 100px;
+    }
+    .row-portofoliu {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+    }
+
+    .programari {
+        padding: 20px 100px;
+    }
+
+    .footer-row {
+        padding: 20px 100px;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+    }
+
+    .footer-row-2 {
+        padding: 15px 0;
+    }
+ }
+
+ /* END portofoliu */
+
+ /* Start programari */
+
+.programari {
+    background-color: #5c2c2c;
+    color: white;
+    /* border: 2px solid white; */
+}
+
+.text-programari {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.text-programari i {
+    padding: 10px 10px 10px 0;
+}
+
+.row-programari {
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    /* border: 2px solid black; */
+}
+
+ /* End programari */
+
+
+/* Footer */
+
+footer {
+    background: #CCCCCC;
+}
+
+.footer-row {
+    display: grid;
+    padding-bottom: 15px;
+    border-bottom: 2px solid black;
+}
+
+.title-footer-col {
+    padding-bottom: 10px;
+}
+
+.content-footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-footer-col li {
+    list-style: none;
+}
+
+.content-footer-col li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-row-2 {
+    text-align: center;
+    
+}
+
+/* End Footer */
